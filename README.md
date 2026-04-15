@@ -1,32 +1,55 @@
-# 用户管理系统（Spring Boot + MyBatis）
+# 用户管理系统（Spring Boot）
 
-## 项目介绍
+## 📌 项目简介
+本项目是一个基于 Spring Boot 的用户管理系统，实现了用户注册、登录、分页查询等基础功能，并结合 JWT 实现登录认证，具备完整的后端开发基础能力。
 
-基于 Spring Boot + MyBatis + MySQL 实现的用户管理系统，
-包含用户的增删改查功能。
+---
 
-## 技术栈
+## 🛠 技术栈
 
-* Spring Boot
-* MyBatis
-* MySQL
+- Java 8
+- Spring Boot
+- MyBatis
+- MySQL
+- JWT（登录认证）
+- PageHelper（分页）
+- Maven
+- Lombok
 
-## 功能
+---
 
-* 查询用户
-* 新增用户
-* 修改用户
-* 删除用户
+## ✨ 功能模块
 
-## 启动方式
+### 🔐 登录认证
+- 使用 JWT 实现无状态登录认证
+- 登录成功返回 token
+- 通过拦截器进行接口鉴权
 
-1. 导入数据库（sql 文件在 /sql 目录）
-2. 修改 application.yml 数据库配置
-3. 启动项目
+### 👤 用户管理
+- 用户注册（新增用户）
+- 用户登录
+- 查询用户列表
 
-## 接口
+### 📄 分页查询
+- 使用 PageHelper 实现数据库分页
+- 支持 pageNum / pageSize 参数
 
-* GET /users
-* POST /add
-* PUT /update
-* DELETE /delete/{id}
+### ⚠️ 异常处理
+- 全局异常处理（@RestControllerAdvice）
+- 自定义异常（CustomException）
+- 统一错误返回
+
+### ✅ 参数校验
+- 使用 @Valid + @NotBlank 实现参数校验
+- 非法参数自动拦截
+
+### 🔒 密码加密
+- 使用 MD5 对密码加密存储
+- 登录时进行加密比对
+
+### 📦 统一返回格式
+- 封装 Result 类，统一接口返回结构
+
+---
+
+## 📂 项目结构
